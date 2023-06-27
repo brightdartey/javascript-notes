@@ -92,4 +92,6 @@ function checkObj(checkProp) {
     }
 };
 
+console.log(checkObj("dog"));
+
 //manupulating complex objects

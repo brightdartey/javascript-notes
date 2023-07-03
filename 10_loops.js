@@ -60,7 +60,7 @@ console.log(ourTotal);
 function multiplyAll(arr) {
     let product = 1;
     for(let i = 0; i < arr.length; i ++) {
-        for(j = 0; j < arr.length; j ++) {
+        for(j = 0; j < arr[i].length; j ++) {
             product *= arr[i][j];
         }
     }
@@ -71,3 +71,74 @@ function multiplyAll(arr) {
 let product = multiplyAll([[1,2],[3, 4],[5, 6, 7]]);
 
 console.log(product);
+
+//itirate Do...While Loops
+let arr3 = [];
+let k = 10;
+
+do {
+    arr3.push(k);
+    k++;
+} while (k < 5)
+
+console.log(k , arr3);
+
+// challenge
+let contacts = [
+    {
+        "firstname": "Akira",
+        "lastname": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstname": "Harry",
+        "lastname": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstname": "Sherlock",
+        "lastname": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstname": "Kristian",
+        "lastname": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+];
+
+console.log(contacts[0]["likes"]);
+function lookUpProfile(name, prop) {
+    for (let i = 0; i < contacts.length; i++) { 
+        if(contacts[i].firstname === name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+    return "No such contact"
+}
+
+let data = lookUpProfile("Sherlock", "lhome");
+
+
+console.log(data);
+
+// create random number
+
+function randomNumber() {
+
+    return Math.floor(Math.random() * 10);
+}
+
+console.log(randomNumber());
+
+//parse Int
+
+function convertToInt(str) {
+    return parseInt(str);
+}
+
+console.log(convertToInt("54"));
